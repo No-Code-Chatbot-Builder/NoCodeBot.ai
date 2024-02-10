@@ -17,6 +17,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
+import SocialSignInButtons from "@/components/site/auth/social-sign-in-buttons";
 
 const SignInForm = () => {
   const { toast } = useToast();
@@ -59,7 +60,7 @@ const SignInForm = () => {
   return (
     <div className="flex flex-col h-[100vh] justify-center px-10">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Login to NoCodeBot.ai</h1>
+        <h1 className="text-3xl font-bold">Sign In to NoCodeBot.ai</h1>
         <p className="text-sm text-secondary">
           Please enter your login details below.
         </p>
@@ -101,19 +102,25 @@ const SignInForm = () => {
           />
 
           <Button className="w-full p-6" type="submit" disabled={isLoading}>
-            {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : "Login"}
+            {isLoading ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              "Sign In"
+            )}
           </Button>
         </form>
       </Form>
       <div className="flex items-center my-4">
         <div className="flex-grow border-t border-secondary/50"></div>
-        <span className="flex-shrink mx-4 text-primary/60 text-sm">
+        <span className="flex-shrink mx-4 text-secondary/50 text-sm">
           or continue with
         </span>
         <div className="flex-grow border-t border-secondary/50"></div>
       </div>
+      <div>
+        <SocialSignInButtons />
+      </div>
       <div className="flex items-center justify-center space-x-2">
-        {/*Social Sign In */}
         <div className="text-sm text-secondary">
           Dont have an account?{" "}
           <Link href="sign-up" className="hover:underline">

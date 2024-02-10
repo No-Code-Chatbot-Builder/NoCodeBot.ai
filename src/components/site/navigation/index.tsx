@@ -46,7 +46,7 @@ const Navigation = (props: Props) => {
           href={"/sign-in"}
           className="bg-primary text-white p-2 px-4 rounded-md hover:bg-primary/80 transition"
         >
-          Log In
+          Sign In
         </Link>
 
         <ModeToggle />

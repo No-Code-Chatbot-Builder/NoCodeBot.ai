@@ -44,10 +44,15 @@ export default function Home() {
             needs <br /> no coding required
           </p>
 
-          <Button size={"lg"} className="w-fit flex flex-row gap-2 rounded-lg">
-            <LogIn />
-            Get Started Now
-          </Button>
+          <Link href="/sign-in">
+            <Button
+              size={"lg"}
+              className="w-fit flex flex-row gap-2 rounded-lg"
+            >
+              <LogIn />
+              Get Started Now
+            </Button>
+          </Link>
 
           <div className="px-4 md:px-10">
             <Image
@@ -77,12 +82,14 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm">
                   {card.description}
                 </p>
-                <Button
-                  size={"default"}
-                  className="w-fit flex flex-row gap-2 rounded-lg"
-                >
-                  Get Started Now
-                </Button>
+                <Link href="/sign-in">
+                  <Button
+                    size={"default"}
+                    className="w-fit flex flex-row gap-2 rounded-lg"
+                  >
+                    Get Started Now
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
