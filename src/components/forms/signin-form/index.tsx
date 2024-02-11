@@ -18,6 +18,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import SocialSignInButtons from "@/components/site/auth/social-sign-in-buttons";
+import { useRouter } from "next/navigation";
 
 const SignInForm = () => {
   const { toast } = useToast();
@@ -53,9 +54,11 @@ const SignInForm = () => {
   });
 
   const isLoading = form.formState.isSubmitting;
+  const router = useRouter();
 
   const handleSubmit = async (values: z.infer<typeof FormSchema>) => {
     console.log(values);
+    router.push("/dashboard");
   };
   return (
     <div className="flex flex-col h-[100vh] justify-center px-10">

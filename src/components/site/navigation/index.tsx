@@ -27,17 +27,17 @@ const Navigation = (props: Props) => {
 
       <nav className="hidden md:block absolute left-[50%] top-[50%] transform translate-x-[-50%] translate-y-[-50%]">
         <ul className="flex items-center justify-center gap-8">
-          <Link href={"#"} className="hover:underline">
+          <Link href={"/pricing"} className="hover:underline">
             Pricing
           </Link>
-          <Link href={"#"} className="hover:underline">
+          <Link href={"/about"} className="hover:underline">
             About
           </Link>
-          <Link href={"#"} className="hover:underline">
-            Browse
-          </Link>
-          <Link href={"#"} className="hover:underline">
+          <Link href={"/features"} className="hover:underline">
             Features
+          </Link>
+          <Link href={"/dashboard"} className="hover:underline">
+            Dashboard
           </Link>
         </ul>
       </nav>

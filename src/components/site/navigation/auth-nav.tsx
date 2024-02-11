@@ -11,8 +11,8 @@ interface Props {
 
 const AuthNavigation = ({ className }: Props) => {
   return (
-    <div className={clsx("", className)}>
-      <div className="pt-6 pl-10 flex items-center justify-between top-0">
+    <div className={clsx("pt-6 pl-10 ", className)}>
+      <div className="flex items-center justify-between top-0">
         <aside className="flex items-center gap-2">
           <Link href="/">
             <div className="flex items-center space-x-2">
