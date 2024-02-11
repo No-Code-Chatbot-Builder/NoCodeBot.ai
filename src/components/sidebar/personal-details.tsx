@@ -6,7 +6,7 @@ import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 const PersonalDetails = () => {
   return (
     <div className="flex flex-col gap-2 py-2 justify-center items-center mt-2 mb-2">
-      <div className="flex flex-row gap-3">
+      <div className="flex flex-row">
         <Avatar>
           <AvatarImage src="https://github.com/shadcn.png" />
           <AvatarFallback>IB</AvatarFallback>

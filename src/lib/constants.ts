@@ -1,3 +1,51 @@
+import {
+  BookPlus,
+  Code,
+  Database,
+  Key,
+  Settings,
+  Star,
+  Zap,
+} from "lucide-react";
+
+export const icons = [
+  {
+    value: "featured",
+    label: "Featured",
+    path: Star,
+  },
+  {
+    value: "mygpts",
+    label: "My GPTs",
+    path: Zap,
+  },
+  {
+    value: "agents",
+    label: "Agents",
+    path: Code,
+  },
+  {
+    value: "datasets",
+    label: "Datasets",
+    path: Database,
+  },
+  {
+    value: "apikeys",
+    label: "API Keys",
+    path: Key,
+  },
+  {
+    value: "discover",
+    label: "Discover",
+    path: BookPlus,
+  },
+  {
+    value: "settings",
+    label: "Settings",
+    path: Settings,
+  },
+];
+
 export const frontPageCards = [
   {
     title: "Your Personal Study Assistant",

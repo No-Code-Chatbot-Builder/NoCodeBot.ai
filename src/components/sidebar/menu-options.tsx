@@ -20,11 +20,7 @@ import { Popover, PopoverTrigger } from "../ui/popover";
 import { PopoverContent } from "@radix-ui/react-popover";
 import InviteAFriend from "./invite-friend";
 import PersonalDetails from "./personal-details";
-
-type SidebarOption = {
-  heading: string;
-  items: { name: string }[];
-};
+import { icons } from "@/lib/constants";
 
 type Props = {
   defaultOpen?: boolean;
@@ -72,12 +68,14 @@ const MenuOptions = ({ id, sidebarOpt, defaultOpen }: Props) => {
               <PopoverTrigger>
                 <div className="flex flex-row justify-center items-center md:w-[250px] w-full p-4 mb-10 gap-4">
                   <div className="w-10 h-10 relative">
-                    <Image
-                      src={"/assets/ncbai.svg"}
-                      alt="Sidebar Logo"
-                      fill
-                      className="rounded-md object-contain"
-                    />
+                    <Link href={"/"}>
+                      <Image
+                        src={"/assets/ncbai.svg"}
+                        alt="NCBP Logo"
+                        fill
+                        className="rounded-md object-contain"
+                      />
+                    </Link>
                   </div>
 
                   <div className="flex flex-col justify-start items-start">
@@ -103,20 +101,29 @@ const MenuOptions = ({ id, sidebarOpt, defaultOpen }: Props) => {
                       </h3>
                     </div>
                     <CommandGroup className="overflow-visible">
-                      {sidebarOption.items.map((item) => (
-                        <CommandItem
-                          key={item.name}
-                          className="md:w-[250px] w-full text-muted-foreground p-2 "
-                        >
-                          <Link
-                            href={"/dashboard"}
-                            className="flex items-center gap-4 rounded-md transition-all"
+                      {sidebarOption.items.map((option) => {
+                        let val;
+                        const result = icons.find(
+                          (icon) => icon.value === option.icon
+                        );
+                        if (result) {
+                          val = <result.path className="w-5 h-5" />;
+                        }
+                        return (
+                          <CommandItem
+                            key={option.name}
+                            className="md:w-[250px] w-full text-muted-foreground p-3 "
                           >
-                            <Settings />
-                            <span>{item.name}</span>
-                          </Link>
-                        </CommandItem>
-                      ))}
+                            <Link
+                              href={option.link}
+                              className="flex items-center gap-4 rounded-md transition-all md:w-[250px] w-full"
+                            >
+                              {val}
+                              <span>{option.name}</span>
+                            </Link>
+                          </CommandItem>
+                        );
+                      })}
                     </CommandGroup>
                   </React.Fragment>
                 ))}
