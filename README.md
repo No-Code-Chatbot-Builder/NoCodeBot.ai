@@ -5,6 +5,15 @@ NoCodeBot.ai is a powerful tool designed to simplify the creation and management
 
 ![NoCodeBot.ai Preview](https://i.ibb.co/L06VyVW/Github-Prreview.png)
 
+## Pre-requisites
+
+- **Amplify CLI:** Install Amplify CLI using npm by running the following command:
+  ```bash
+  npm install -g @aws-amplify/cli
+  ```
+- Run `amplify pull --appId d1x8fx1ca1l7lu --envName dev` to pull the latest backend changes.
+
+
 ## Features
 
 - **Workspace Management:** Organize and manage your AI projects in dedicated workspaces.
